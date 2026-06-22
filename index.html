@@ -242,9 +242,7 @@
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
            <h1 class="title is-3 publication-title" style="text-align: center; line-height: 1.3;">
-            ANTS: Adaptive Negative Textual Space Shaping <br>
-            for OOD Detection via <br> 
-            Test-Time MLLM Understanding and Reasoning
+            Dual Distribution Estimation for Zero-shot Noisy Test-Time Adaptation with VLMs <br>
           </span>
           </h1>
             <div class="is-size-5 publication-authors">
@@ -254,6 +252,8 @@
                 <span class="author-block">
                   <a href="https://ybzh.github.io/" target="_blank">Yabin Zhang</a><sup>*</sup>,</span>
                   <span class="author-block">
+                  <a href="https://liangxuy.github.io/" target="_blank">Liang Xu</a><sup>*</sup>,</span>
+                  <span class="author-block">  
                     <a href="https://jinx-ustc.github.io/jinxin.github.io/" target="_blank">Xin Jin</a>,</span>
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=_cUfvYQAAAAJ&hl=en" target="_blank">Wenjun Zeng</a><sup>†</sup>,</span>
@@ -265,11 +265,11 @@
                   <span class="author-block">
                   <span style="font-size: 0.85em;">
                       1.The Hong Kong Polytechnic University; 2.Eastern Institute of Technology, Ningbo <br>
-                      3.Harbin Institute of Technology (Shenzhen); 4.Zhongguancun Academy
+                      3.Harbin Institute of Technology (Shenzhen); 4.Shanghai Jiao Tong University
                   </span>
                   <br>
                   <span style="font-size: 1.2em; font-weight: bold;">
-                      CVPR 2026 Oral
+                      ECCV 2026
                   </span>
                   </span>
 
@@ -277,7 +277,7 @@
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2509.03951" target="_blank"
+                        <a href="" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -288,7 +288,7 @@
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/ZhuWenjie98/ANTS" target="_blank"
+                    <a href="https://github.com/ZhuWenjie98/DDE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -299,7 +299,7 @@
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2509.03951" target="_blank"
+                  <a href="" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -319,7 +319,7 @@
 <!-- Teaser video-->
 <section class="hero teaser" style="margin-top: -2rem;"> <div class="container is-max-desktop">
     <div class="hero-body" style="padding-top: 0;"> <div style="text-align: center;">
-        <img src="static/images/cot_ood.jpg" alt="MLLM test time understanding and reasoning for OOD detection" style="width:60%; height:auto;">
+        <img src="static/images/tsne_tta_visualization.png" alt="MLLM test time understanding and reasoning for OOD detection" style="width:60%; height:auto;">
       </div>
       <h2 class="subtitle has-text-centered"></h2>
     </div>
@@ -336,10 +336,8 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            The introduction of negative labels (NLs) has proven effective in enhancing Out-of-Distribution (OOD) detection. However, existing methods often lack an understanding of OOD images, making it difficult to construct an accurate negative space. Furthermore, the absence of negative labels semantically similar to ID labels constrains their capability in near-OOD detection. To address these issues, we propose shaping an Adaptive Negative Textual Space (ANTS) by leveraging the understanding and reasoning capabilities of multimodal large language models (MLLMs). 
-            Specifically, we cache images likely to be OOD samples from the historical test images and prompt the MLLM to describe these images, 
-            generating expressive negative sentences that precisely characterize the OOD distribution and enhance far-OOD detection. For the near-OOD setting, where OOD samples resemble the in-distribution (ID) subset, we cache the subset of ID classes that are visually similar to historical test images and then leverage MLLM reasoning to generate visually similar negative labels tailored to this subset, effectively reducing false negatives and improving near-OOD detection. To balance these two types of negative textual spaces, 
-            we design an adaptive weighted score that enables the method to handle different OOD task settings (near-OOD and far-OOD), making it highly adaptable in open environments. On the ImageNet benchmark, our ANTS significantly reduces the FPR95 by 3.1\%, establishing a new state-of-the-art. Furthermore, our method is training-free and zero-shot, enabling high scalability.
+            While test-time adaptation (TTA) empowers vision-language models to adapt without costly retraining, it remains highly vulnerable to out-of-distribution (OOD) outliers prevalent in real-world applications. This discrepancy motivates Noisy TTA (NTTA), an online task to filter noisy OOD samples on the fly while maximizing in-distribution (ID) classification accuracy. Existing zero-shot NTTA approaches typically rely on test-time discriminative training, leading to overconfident misclassifications and significantly degraded inference efficiency. To address these limitations, we propose a novel framework named Dual Distribution Estimation (DDE), shifting the zero-shot NTTA paradigm from instance-level learning to training-free Gaussian distribution modeling. DDE incorporates two novel modules: Positive Feature Distribution Estimation (PFDE) and Negative Label Distribution Estimation (NLDE). PFDE explicitly models class-wise inclusion and exclusion Gaussian distributions to formulate a calibrated contrastive score, robustly enhancing ID accuracy. In parallel, NLDE improves OOD identification by explicitly modeling the negative label distribution to mine highly discriminative labels, effectively mitigating spurious correlations. Extensive experiments show that on the large-scale ImageNet benchmark, DDE achieves an improvement of 3.70\% in harmonic mean accuracy and reduces the FPR95 for OOD detection by 6.20\%, while ensuring highly scalable and efficient online inference. Furthermore, DDE is zero-shot and training-free, demonstrating remarkable robustness in data-scarce scenarios.
+            Codes are available at \url{https://github.com/ZhuWenjie98/DDE}.
           </p>
         </div>
       </div>
@@ -359,7 +357,7 @@
       <h2 class="title is-3">Framework Overview</h2> <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="publication-image">
-            <img src="static/images/cvpr_frame.jpg" alt="Framework Overview" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <img src="static/images/eccv_frame.png" alt="Framework Overview" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
           </div>
         </div>
       </div>
@@ -382,12 +380,8 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{zhu2025ants,
-  title={ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning},
-  author={Zhu, Wenjie and Zhang, Yabin and Jin, Xin and Zeng, Wenjun and Zhang, Lei},
-  journal={arXiv preprint arXiv:2509.03951},
-  year={2025}
-}</code></pre>
+      <pre id="bibtex-code"><code>
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
