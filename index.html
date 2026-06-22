@@ -248,11 +248,11 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://zhuwenjie98.github.io/" target="_blank">Wenjie Zhu</a><sup>*</sup>,</span>
+                <a href="https://zhuwenjie98.github.io/" target="_blank">Wenjie Zhu</a>,</span>
                 <span class="author-block">
-                  <a href="https://ybzh.github.io/" target="_blank">Yabin Zhang</a><sup>*</sup>,</span>
+                  <a href="https://ybzh.github.io/" target="_blank">Yabin Zhang</a>,</span>
                   <span class="author-block">
-                  <a href="https://liangxuy.github.io/" target="_blank">Liang Xu</a><sup>*</sup>,</span>
+                  <a href="https://liangxuy.github.io/" target="_blank">Liang Xu</a>,</span>
                   <span class="author-block">  
                     <a href="https://jinx-ustc.github.io/jinxin.github.io/" target="_blank">Xin Jin</a>,</span>
                   <span class="author-block">
@@ -318,9 +318,29 @@
 
 <!-- Teaser video-->
 <section class="hero teaser" style="margin-top: -2rem;"> <div class="container is-max-desktop">
-    <div class="hero-body" style="padding-top: 0;"> <div style="text-align: center;">
+    <!-- <div class="hero-body" style="padding-top: 0;"> <div style="text-align: center;">
         <img src="static/images/tsne_tta_visualization.png" alt="CLIP vs. DDE Classifiers" style="width:45%; height:auto;">
         <img src="static/images/id_ood_prediction_distribution.png" alt="Label distribution" style="width:45%; height:auto;">
+      </div> -->
+      <div style="display:flex; justify-content:center; gap:20px;">
+
+      <div style="width:45%; text-align:center;">
+        <img src="static/images/tsne_tta_visualization.png"
+            alt="CLIP vs. DDE Classifiers"
+            style="width:100%; height:auto;">
+        <p style="margin-top:8px; font-size:0.95rem;">
+          (a) t-SNE visualization of feature distributions.
+        </p>
+      </div>
+
+      <div style="width:45%; text-align:center;">
+        <img src="static/images/id_ood_prediction_distribution.png"
+            alt="Label distribution"
+            style="width:100%; height:auto;">
+        <p style="margin-top:8px; font-size:0.95rem;">
+          (b) Predicted label distribution on ID and OOD samples.
+        </p>
+      </div>
       </div>
       <h2 class="subtitle has-text-centered"></h2>
     </div>
